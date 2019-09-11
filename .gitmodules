@@ -1,0 +1,3 @@
+[submodule "assets"]
+	path = assets
+	url = https://github.com/RahulDey12/orange_publishers_design.git
