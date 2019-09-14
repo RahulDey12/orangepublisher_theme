@@ -140,15 +140,7 @@
         <div class="heading">
             <h2>Sign up to Start Publishing Now</h2>
         </div>
-        <form action="">
-            <div class="form-container container">
-                <input type="text" placeholder="Enter Name">
-                <input type="email" name="" id="" placeholder="Enter Email">
-                <input type="text" placeholder="Enter Subject">
-                <input type="tel" name="" id="" placeholder="Phone Number">
-                <button type="submit">Publish My Book</button>
-            </div>
-        </form>
+        <?php echo do_shortcode('[contact-form-7 id="7" title="homepage contact form"]') ?>
     </section>
     <!-- Partner Section -->
     <section class="orange-partner-section d-none d-md-block">
@@ -268,6 +260,29 @@
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Section -->
+    <section class="orange-blog-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="section-heading">
+                    <h2 class="main-heading">our <span>Blogs</span></h2>
+                    <p class="sub-heading">Here are many variations of passages</p>
+                </div>
+
+                <div class="blogs">
+                    <div class="blog">
+                        <a href="#">
+                            <img src="./src/images/blog1.png" alt="">
+                        </a>
+                        <p class="date">2.02.2019</p>
+                        <a href="#">
+                            <p class="title">Your Blog title lorem ipsum text Kolkata</p>
+                        </a>
                     </div>
                 </div>
             </div>
