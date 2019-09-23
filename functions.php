@@ -4,12 +4,12 @@ if(!function_exists('orange_setup')) {
         // Thumbnail Support
         add_theme_support( 'post-thumbnails' );
 
-        add_image_size( 'orange-blog', 930, 620, false );
+        add_image_size( 'orange-blog', 350, 220, true );
 
         // Logo Support
         add_theme_support( 'custom-logo', array(
-            'height'      => 100,
-            'width'       => 400,
+            'height'      => 221,
+            'width'       => 600,
             'flex-height' => true,
             'flex-width'  => true,
         ) );
@@ -62,3 +62,103 @@ if(! function_exists('orange_scripts')){
 }
 add_action('wp_enqueue_scripts', 'orange_scripts');
 
+if(! function_exists('orange_footer_sidebar') ) {
+    function orange_footer_sidebar() {
+        $footer_sidebars = array(
+            array(
+                'name'          =>  'Footer Widget 1',
+                'id'            =>  'footer-widget-1',
+                'description'   =>  'Footer widget first column'
+            ),
+            array(
+                'name'          =>  'Footer Widget 2',
+                'id'            =>  'footer-widget-2',
+                'description'   =>  'Footer widget second column'
+            ),
+            array(
+                'name'          =>  'Footer Widget 3',
+                'id'            =>  'footer-widget-3',
+                'description'   =>  'Footer widget third column'
+            ),
+            array(
+                'name'          =>  'Footer Widget 4',
+                'id'            =>  'footer-widget-4',
+                'description'   =>  'Footer widget forth column'
+            ),
+            array(
+                'name'          =>  'Footer Widget 5',
+                'id'            =>  'footer-widget-5',
+                'description'   =>  'Footer widget fifth column'
+            ),
+        );
+
+        $defaults = array(
+            'name'          =>  'Widget Area',
+            'id'            =>  'widget-area',
+            'description'   =>  'Default Widget Description',
+            'class'         =>  '',
+            'before_widget' =>  '<div class="footer-widget">',
+            'after_widget'  =>  '</div>',
+            'before_title'  =>  '<h5 class="footer-widget-title">',
+            'after_title'   =>  '</h5>'
+        );
+
+        foreach ($footer_sidebars as $footer_sidebar) {
+            $args = wp_parse_args( $footer_sidebar, $defaults );
+            register_sidebar( $args );
+        }
+    }
+}
+add_action( 'widgets_init', 'orange_footer_sidebar' );
+
+// Page Sidebar register
+function orange_right_sidebar() {
+    register_sidebar(
+        array(
+            'name'          =>  'Right Sidebar',
+            'id'            =>  'right-sidebar',
+            'description'   =>  'This is right sidebar',
+            'class'         =>  '',
+            'before_widget' =>  '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  =>  '</div>',
+            'before_title'  =>  '<p class="widget-title">',
+            'after_title'   =>  '</p>'
+        )
+    );
+}
+add_action('widgets_init', 'orange_right_sidebar');
+
+//Add Taxonomy
+    function create_service_cat_taxonomy() {
+        $labels = array(
+            'name'              => _x( 'Service Category', 'taxonomy general name', 'orange' ),
+            'singular_name'     => _x( 'Service Category', 'taxonomy singular name', 'orange' ),
+            'search_items'      => __( 'Search Service Category', 'orange' ),
+            'all_items'         => __( 'All Service Category', 'orange' ),
+            'parent_item'       => __( 'Parent Service Category', 'orange' ),
+            'parent_item_colon' => __( 'Parent Service Category:', 'orange' ),
+            'edit_item'         => __( 'Edit Service Category', 'orange' ),
+            'update_item'       => __( 'Update Service Category', 'orange' ),
+            'add_new_item'      => __( 'Add New Service Category', 'orange' ),
+            'new_item_name'     => __( 'New Genre Service Category', 'orange' ),
+            'menu_name'         => __( 'Service Category', 'orange' ),
+        );
+
+        $args = array(
+            'hierarchical'          => true,
+            'labels'                => $labels,
+            'show_ui'               => true,
+            'show_admin_column'     => true,
+            'query_var'             => true,
+            'rewrite'               => array( 'slug' => 'service_cat' ),
+            'show_in_rest'          => true,
+            'rest_base'             => 'service_cat',
+            'rest_controller_class' => 'WP_REST_Terms_Controller',
+        );
+
+        register_taxonomy( 'service_cat', array( 'page' ), $args );
+    }
+    add_action('init', 'create_service_cat_taxonomy');
+
+//    Get external Functions
+    require get_template_directory().'/functions/theme-menu.php';

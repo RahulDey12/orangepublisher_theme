@@ -266,26 +266,5 @@
         </div>
     </section>
     <!-- Blog Section -->
-    <section class="orange-blog-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="section-heading">
-                    <h2 class="main-heading">our <span>Blogs</span></h2>
-                    <p class="sub-heading">Here are many variations of passages</p>
-                </div>
-
-                <div class="blogs">
-                    <div class="blog">
-                        <a href="#">
-                            <img src="./src/images/blog1.png" alt="">
-                        </a>
-                        <p class="date">2.02.2019</p>
-                        <a href="#">
-                            <p class="title">Your Blog title lorem ipsum text Kolkata</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php require(get_template_directory().'/sections/blog-section.php') ?>
 <?php get_footer(); ?>
