@@ -10,7 +10,7 @@ add_action( 'admin_menu', 'orange_register_menu' );
 
 // The Settings Page
 function themeSettingPage() {
-    require_once get_template_directory().'/admin-menu/option.php';
+    require_once get_template_directory().'/views/option-menu-page.php';
 }
 
 // Register the settings

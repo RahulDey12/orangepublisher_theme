@@ -4,7 +4,7 @@ if(!function_exists('orange_setup')) {
         // Thumbnail Support
         add_theme_support( 'post-thumbnails' );
 
-        add_image_size( 'orange-blog', 350, 220, true );
+        add_image_size( 'orange-blog', '420', '280', true );
 
         // Logo Support
         add_theme_support( 'custom-logo', array(
@@ -48,7 +48,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 if(! function_exists('orange_styles')){
     function orange_styles() {
         //All Stylesheets
-//        wp_enqueue_style('main-style', get_template_directory_uri().'/assets/dist/css/main.css',false, "1.0");
+        wp_enqueue_style('main-style', get_template_directory_uri().'/assets/dist/css/main.css',false, "1.0");
     }
 }
 add_action('wp_enqueue_scripts', 'orange_styles');
@@ -57,7 +57,7 @@ add_action('wp_enqueue_scripts', 'orange_styles');
 if(! function_exists('orange_scripts')){
     function orange_scripts() {
         //All Stylesheets
-//        wp_enqueue_script('main-js', get_template_directory_uri().'/assets/dist/js/app.js',false, "1.0");
+        wp_enqueue_script('main-js', get_template_directory_uri().'/assets/dist/js/app.js',false, "1.0");
     }
 }
 add_action('wp_enqueue_scripts', 'orange_scripts');
@@ -111,6 +111,22 @@ if(! function_exists('orange_footer_sidebar') ) {
 }
 add_action( 'widgets_init', 'orange_footer_sidebar' );
 
+// if no title then add widget content wrapper to before widget
+//add_filter( 'dynamic_sidebar_params', 'check_sidebar_params' );
+//function check_sidebar_params( $params ) {
+//    global $wp_registered_widgets;
+//
+//    $settings_getter = $wp_registered_widgets[ $params[0]['widget_id'] ]['callback'][0];
+//    $settings = $settings_getter->get_settings();
+//    $settings = $settings[ $params[1]['number'] ];
+//
+//    if ( $params[0][ 'after_widget' ] == '</div></div>' && isset( $settings[ 'title' ] ) && empty( $settings[ 'title' ] ) ) {
+//        $params[0]['before_widget'] .= '<div class="widget-main-content">';
+//    }
+//
+//    return $params;
+//}
+
 // Page Sidebar register
 function orange_right_sidebar() {
     register_sidebar(
@@ -119,10 +135,10 @@ function orange_right_sidebar() {
             'id'            =>  'right-sidebar',
             'description'   =>  'This is right sidebar',
             'class'         =>  '',
-            'before_widget' =>  '<div id="%1$s" class="widget %2$s">',
-            'after_widget'  =>  '</div>',
-            'before_title'  =>  '<p class="widget-title">',
-            'after_title'   =>  '</p>'
+            'before_widget' =>  '<div id="%1$s" class="right-widget %2$s">',
+            'after_widget'  =>  '</div></div>',
+            'before_title'  =>  '<h3 class="widget-title">',
+            'after_title'   =>  '</h3><div class="widget-main-content">'
         )
     );
 }
@@ -161,4 +177,4 @@ add_action('widgets_init', 'orange_right_sidebar');
     add_action('init', 'create_service_cat_taxonomy');
 
 //    Get external Functions
-    require get_template_directory().'/functions/theme-menu.php';
+    require get_template_directory().'/functions/option-menu.php';

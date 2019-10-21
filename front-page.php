@@ -6,17 +6,7 @@
                 <div class="col-10 col-md-8 banner-content">
                     <h1 class="orange-banner-heading text-center">Stories to tell? Life to remember?</h1>
                     <p class="orange-banner-sub-heading text-center">Publish your story and make it a bestseller.</p>
-
-                    <div class="orange-banner-form row justify-content-center">
-                        <select id="bannerServiceCat" class="col-md-3 p-0 mr-3">
-                            <option value="kolkata">Kolkata</option>
-                            <option value="bihar">Bihar</option>
-                        </select>
-                        <select id="bannerService" class="col-md-5 p-0">
-                            <option value="q1">Quistion One</option>
-                            <option value="q2">Quistion Two</option>
-                        </select>
-                    </div>
+                    <?php require(get_template_directory().'/sections/homepage-query-section.php') ?>
                 </div>
 
                 <!-- Bottom Shape -->

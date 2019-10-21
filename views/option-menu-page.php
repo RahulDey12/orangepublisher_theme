@@ -8,6 +8,7 @@
         <?php
             $terms = get_terms([
                 'hide_empty' => false,
+                'taxonomy' => 'service_cat',
             ]);
 
             $selected = false;
