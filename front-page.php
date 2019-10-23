@@ -26,7 +26,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-6 orange-about-video">
-                        <div class="embed-responsive embed-responsive-4by3 video-main">
+                        <div class="embed-responsive embed-responsive-16by9 video-main">
                             <video src="<?php echo get_template_directory_uri() ?>/assets/src/videos/about_video_4by3.mp4" class="embed-responsive-item"></video>
                             <div class="overlay"></div>
                             <img src="<?php echo get_template_directory_uri() ?>/assets/src/images/play-icon.svg" alt="Play Icon" class="play-icon">
@@ -63,9 +63,9 @@
                     <div class="orange-new-book-cat-heading container-fluid d-none d-md-block">
                         <div class="new-book-cat-title-section col-12 col-xl-10 mx-auto">
                             <ul>
-                                <li class="new-book-cat-title active"><a href="#">New Releases</a></li>
-                                <li class="new-book-cat-title"><a href="#">Coming soon</a></li>
-                                <li class="new-book-cat-title"><a href="#">Best Sellers</a></li>
+                                <li class="new-book-cat-title active"><a href="#" data-book="#new-book-cat1">New Releases</a></li>
+                                <li class="new-book-cat-title"><a href="#" data-book="#new-book-cat2">Coming soon</a></li>
+                                <li class="new-book-cat-title"><a href="#" data-book="#new-book-cat3">Best Sellers</a></li>
                                 <li class="new-book-cat-title"><a href="#">Award Winners</a></li>
                                 <li class="new-book-cat-title"><a href="#">Selected For You</a></li>
                             </ul>
@@ -76,6 +76,34 @@
                             <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-1.jpg" alt=""></div>
                             <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-2.jpg" alt=""></div>
                             <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-3.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-4.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-5.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-6.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-1.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-2.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-3.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-4.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-5.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-6.jpg" alt=""></div>
+                        </div>
+                        <div id="new-book-cat2" class="books row m-0">
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-2.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-1.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-3.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-4.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-5.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-6.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-1.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-2.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-3.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-4.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-5.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-6.jpg" alt=""></div>
+                        </div>
+                        <div id="new-book-cat3" class="books row m-0">
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-3.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-1.jpg" alt=""></div>
+                            <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-2.jpg" alt=""></div>
                             <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-4.jpg" alt=""></div>
                             <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-5.jpg" alt=""></div>
                             <div class="book col-md-2"><img src="<?php echo get_template_directory_uri() ?>/assets/src/images/book-6.jpg" alt=""></div>

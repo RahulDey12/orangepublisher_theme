@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!--    <link rel="stylesheet" href="http://localhost:8080/dist/css/main.css">-->
+    <link rel="stylesheet" href="http://localhost:8080/dist/css/main.css">
     <?php wp_head() ?>
 </head>
 <body>
@@ -24,9 +24,15 @@
                             </a>
                         </div>
                         <div class="menu">
-                            <div class="main-menu">
-
-                                <div class="call">
+                            <div class="main-menu row m-0">
+                                <div class="page-menu col-8">
+                                    <?php
+                                    if ( has_nav_menu( 'header-menu' ) ) {
+                                        wp_nav_menu( array( 'theme_location' => 'header-menu', 'container_class' => 'header-menu-container' ) );
+                                    }
+                                    ?>
+                                </div>
+                                <div class="call col-4">
                                     <div class="icon">
                                         <i class="fas fa-phone-alt"></i>
                                     </div>
