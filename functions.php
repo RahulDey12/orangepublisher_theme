@@ -176,5 +176,22 @@ add_action('widgets_init', 'orange_right_sidebar');
     }
     add_action('init', 'create_service_cat_taxonomy');
 
+//    Removing Span from Contact Form 7
+add_filter('wpcf7_form_elements', function( $content ) {
+    $dom = new DOMDocument();
+    $dom->preserveWhiteSpace = false;
+    $dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+    $xpath = new DomXPath($dom);
+    $spans = $xpath->query("//span[contains(@class, 'wpcf7-form-control-wrap')]" );
+
+    foreach ( $spans as $span ) :
+        $children = $span->firstChild;
+        $span->parentNode->replaceChild( $children, $span );
+    endforeach;
+
+    return $dom->saveHTML();
+});
+
 //    Get external Functions
     require get_template_directory().'/functions/option-menu.php';

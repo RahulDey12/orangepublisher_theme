@@ -27,4 +27,12 @@
         <!-- Submit Button -->
         <?php submit_button(); ?>
     </form>
+    <form method="post" action="options.php">
+        <?php settings_fields( 'orange-service-page-cf7-group' ); ?>
+        <?php do_settings_sections( 'orange-service-page-cf7-group' ); ?>
+        <label for="cf7Code">Service Page Contact Form7 Code</label>
+        <input type="text" name="cf7Code" value="<?php echo htmlspecialchars(get_option('cf7Code')) ?>" maxlength="191">
+        <!-- Submit Button -->
+        <?php submit_button(); ?>
+    </form>
 </div>

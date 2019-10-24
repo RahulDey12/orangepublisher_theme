@@ -27,7 +27,11 @@
                 <div class="row">
                     <div class="col-12 col-lg-6 orange-about-video">
                         <div class="embed-responsive embed-responsive-16by9 video-main">
-                            <video src="<?php echo get_template_directory_uri() ?>/assets/src/videos/about_video_4by3.mp4" class="embed-responsive-item"></video>
+                            <?php
+                                if(get_field('about_section_video_url')):
+                            ?>
+                                <video src="<?php the_field('about_section_video_url') ?>" class="embed-responsive-item"></video>
+                            <?php endif ?>
                             <div class="overlay"></div>
                             <img src="<?php echo get_template_directory_uri() ?>/assets/src/images/play-icon.svg" alt="Play Icon" class="play-icon">
                         </div>
@@ -158,7 +162,11 @@
         <div class="heading">
             <h2>Sign up to Start Publishing Now</h2>
         </div>
-        <?php echo do_shortcode('[contact-form-7 id="7" title="homepage contact form"]') ?>
+        <?php
+            if(get_field('cf7_code')) {
+                echo do_shortcode(get_field('cf7_code'));
+            }
+        ?>
     </section>
     <!-- Partner Section -->
     <section class="orange-partner-section d-none d-md-block">

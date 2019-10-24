@@ -20,9 +20,11 @@
                     <div class="col-md-5 col-12">
                         <div class="question-box">
                             <p class="question-title">What service are you looking for?</p>
-                            <button id="#contact">Lorem Ipsum Dummy Text</button>
-                            <button id="#related">Lorem Ipsum Dummy Text</button>
-                            <button>Lorem Ipsum Dummy Text</button>
+                            <?php
+                                if(get_option('cf7Code')) {
+                                    echo do_shortcode(get_option('cf7Code'));
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>

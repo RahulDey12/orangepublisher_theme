@@ -22,7 +22,7 @@
         <?php if(have_posts()): ?>
             <div class="row main-blogs">
                 <?php while (have_posts()): the_post(); ?>
-                    <div class="col-4 blog">
+                    <div class="col-12 col-sm-6 col-lg-4 blog">
                         <div class="img-container">
                             <?php if(has_post_thumbnail()): ?>
                                 <img src="<?php echo get_the_post_thumbnail_url(null, 'orange-blog') ?>" alt="<?php the_title() ?>">

@@ -16,5 +16,6 @@ function themeSettingPage() {
 // Register the settings
 function registerOrangeSettings() { // whitelist options
     register_setting( 'orange-service-group', 'selectService' );
+    register_setting( 'orange-service-page-cf7-group', 'cf7Code' );
 }
 

@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <!--    <link rel="stylesheet" href="http://localhost:8080/dist/css/main.css">-->
-    <base href="<?php echo bloginfo('url') ?>">
+    <base href="<?php bloginfo('url') ?>">
     <?php wp_head() ?>
 </head>
 <body>
@@ -26,14 +26,14 @@
                         </div>
                         <div class="menu">
                             <div class="main-menu row m-0">
-                                <div class="page-menu col-8">
+                                <div class="page-menu d-none d-md-block col-md-12 col-lg-8 col-xl-9">
                                     <?php
                                     if ( has_nav_menu( 'header-menu' ) ) {
                                         wp_nav_menu( array( 'theme_location' => 'header-menu', 'container_class' => 'header-menu-container' ) );
                                     }
                                     ?>
                                 </div>
-                                <div class="call col-4">
+                                <div class="call d-none d-lg-flex col-lg-4 col-xl-3">
                                     <div class="icon">
                                         <i class="fas fa-phone-alt"></i>
                                     </div>
